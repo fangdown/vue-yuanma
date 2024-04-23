@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>手写mount</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/h.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom-class.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom-props.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom-style.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom-eventlisteners.js"></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+ 
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+ 
+      li {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <script src="./render.js"></script>
+  <body>
+    <div id="app"></div>
+    <script>
+      const vNode = h(
+        "div",
+        { id: "888", onclick: () => console.log("我被点击了!") },
+        [h("span", {}, "我是一号孩子"), h("span", {}, "我是二号孩子")]
+      );
+ 
+      mount(vNode, "#app");
+    </script>
+  </body>
+</html>
